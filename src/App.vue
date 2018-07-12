@@ -1,13 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <heads></heads>
+    <foot></foot>
     <router-view/>
   </div>
 </template>
 
 <script>
+import heads from './components/head/head.vue'
+import foot from './components/foot/foot.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+      heads,
+      foot
+    }
 }
 </script>
 
@@ -18,6 +25,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
