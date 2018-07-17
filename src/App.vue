@@ -1,14 +1,15 @@
 <template>
   <div id="app">
     <heads></heads>
-    <foot></foot>
     <router-view/>
+    <foot></foot>
   </div>
 </template>
 
 <script>
 import heads from './components/head/head.vue'
 import foot from './components/foot/foot.vue'
+
 export default {
   name: 'App',
   components:{

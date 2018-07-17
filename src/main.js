@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import reset from '../static/css/reset.css'
-
+import '../node_modules/swiper/dist/css/swiper.min.css'
 
 
 Vue.config.productionTip = false

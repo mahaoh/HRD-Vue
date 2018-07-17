@@ -2,39 +2,18 @@
 	<footer>
      <div class="info">
         <div class="first">
-            <dl class="s1">
-                <dt>关于我们</dt>
-                <dd><a href="javascript:">惠人贷简介</a></dd>
-                <dd><a href="javascript:">平台原理</a></dd>
-                <dd><a href="javascript:">联系我们</a></dd>
-            </dl>
-            <dl class="s2">
-                <dt>用户协议</dt>
-                <dd><a href="javascript:">政策法规</a></dd>
-                <dd><a href="javascript:">隐私保护</a></dd>
-                <dd><a href="javascript:">免责条款</a></dd>
-            </dl>
-            <dl class="s3">
-                <dt>常见问题</dt>
-                <dd><a href="javascript:">投资人必读</a></dd>
-                <dd><a href="javascript:">充值提现必读</a></dd>
-                <dd><a href="javascript:">新手指南</a></dd>
+            <dl v-for="foot in footList"  v-bind:class="foot.listClass">
+                <dt>{{foot.name}}</dt>
+                <dd v-for="list in foot.list"><a href="javascript:">{{list}}</a></dd> 
             </dl>
         </div>
         <div class="child">
             <dl>
-                <dd>
-                    <label>下载惠APP</label>
-                    <img src="../../assets/images/footer/footer-APP.png" width="80" height="80" alt="下载惠人贷APP">
+                <dd v-for="child in childList">
+                    <label>{{child.text}}</label>
+                    <img v-bind:src="child.src" width="80" height="80" >
                 </dd>
-                <dd>
-                    <label>关注订阅号</label>
-                    <img src="../../assets/images/footer/footer-dy.png" width="80" height="80" alt="惠人贷订阅号">
-                </dd>
-                <dd>
-                    <label>关注服务号</label>
-                    <img src="../../assets/images/footer/footer-fuwu.png" width="80" height="80" alt="惠人贷服务号">
-                </dd>
+               
             </dl>
         </div>
         <div class="last">
@@ -67,11 +46,44 @@
 </footer>
 </template>
 <script>
+import footerDy from '../../assets/images/footer/footer-dy.png';
+import footerFuwu from '../../assets/images/footer/footer-fuwu.png';
+import footerAPP from '../../assets/images/footer/footer-APP.png'
 	export default{
 		name:'foot',
 		data(){
 			return {
-				msg:'这是尾部'
+				footList:[
+					{   
+						listClass:'s1',
+						name:'关于我们',
+						list:['惠人贷简介','平台原理','联系我们']
+					},
+					{
+						listClass:'s2',
+						name:'用户协议',
+						list:['政策法规','隐私保护','免责条款']
+					},
+					{
+						listClass:'s3',
+						name:'常见问题',
+						list:['投资人必读','充值提现必读','新手指南']
+					}
+				],
+				childList:[
+					{
+						text:'下载惠APP',
+						src:footerAPP
+					},
+					{
+						text:'关注订阅号',
+						src:footerDy
+					},
+					{
+						text:'关注服务号',
+						src:footerFuwu
+					}
+				]
 			}
 		}
 	}
