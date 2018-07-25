@@ -16,7 +16,7 @@
 	    <div class="wrap">
 	        <div class="logo">
 	            <a href="javascript:;" title="logo">
-	                <img src="../../assets/images/header/header-logo.png" alt="惠人贷logo"  width="173" height="37" >
+	                <img src="../../../static/images/header/header-logo.png" alt="惠人贷logo"  width="173" height="37" >
 	            </a>
 	        </div>
 	        <ul class="user">
@@ -147,7 +147,7 @@ header .wrap .user li:hover a.as:before{
           display: inline-block;
           width:7px ;
           height: 4px;
-          background: url("../../assets/images/header/header.png")no-repeat;
+          background: url("../../../static/images/header/header.png")no-repeat;
 
           position: absolute;
           top: 13px;
@@ -193,7 +193,7 @@ header .wrap .user li:hover a.as:before{
         border-bottom: none;
         z-index: 999;
          em{
-           background: url("../../assets/images/header/header.png")no-repeat;
+           background: url("../../../static/images/header/header.png")no-repeat;
            background-position-x: -7px;
          }
         span{
@@ -209,7 +209,7 @@ header .wrap .user li:hover a.as:before{
           height: 141px;
           right: -2px;
           top: 30px;
-          background:#fff url("../../assets/images/header/header-weat.png")no-repeat;
+          background:#fff url("../../../static/images/header/header-weat.png")no-repeat;
         }
       }
       .header-APP{
@@ -222,7 +222,7 @@ header .wrap .user li:hover a.as:before{
           right: -2px;
           top: 30px;
           z-index: 99;
-          background:#fff url("../../assets/images/header/header-APP.png")no-repeat;
+          background:#fff url("../../../static/images/header/header-APP.png")no-repeat;
         }
       }
       p:hover{
@@ -290,7 +290,7 @@ header{
         display: inline-block;
         width: 17px;
         height: 18px;
-        background: url("../../assets/images/header/header-wode.png")no-repeat center;
+        background: url("../../../static/images/header/header-wode.png")no-repeat center;
         margin-right: 8px;
       }
     }
@@ -318,12 +318,12 @@ header{
         display: inline-block;
         width:9px ;
         height: 6px;
-        background: url("../../assets/images/header/header-bottom.png")no-repeat;
+        background: url("../../../static/images/header/header-bottom.png")no-repeat;
       }
     }
     .login-show:hover{
       label{
-        background: url("../../assets/images/header/header-top.png")no-repeat;
+        background: url("../../../static/images/header/header-top.png")no-repeat;
       }
       .user-list{
         display: block;

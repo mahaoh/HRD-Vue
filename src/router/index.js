@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import vuex from 'vuex'
 import home from '@/views/home/home.vue'
 import login from '@/views/login/login.vue'
-import loginDL from '@/views/login/loginDL.vue'
+import loginDL from '../views/login/loginDL.vue'
 Vue.use(Router)
+Vue.use(vuex)
 
 export default new Router({
   routes: [
@@ -27,4 +29,4 @@ export default new Router({
     	component:loginDL
     }
   ]
-})
+});

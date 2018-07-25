@@ -1,4 +1,4 @@
-)<template>
+<template>
 	<div class="slide" id="slide">
 		<div class="swiper-container banner-swiper" id="banner-swiper">
 		    <div class="swiper-wrapper">
@@ -15,8 +15,8 @@
 		    <div class="swiper-pagination" id="banner-pagination"></div>
 		    
 		    <!-- 如果需要导航按钮 -->
-		    <div class="swiper-button-prev" id="swiper-button-prev"></div>
-		    <div class="swiper-button-next" id="swiper-button-next"></div>
+		    <div class="swiper-button-prev swiper-button-white" id="swiper-button-prev" style="margin-left:50px;"></div>
+		    <div class="swiper-button-next swiper-button-white" id="swiper-button-next" style="margin-right:50px;"></div>
 		</div>
 	</div>
 </template>
@@ -55,16 +55,12 @@
   		}
 	}
 </script>
-
 <style scoped lang="less">
-
+ .swiper-button-disabled{
+    display:none;
+  }
  #banner-swiper{
   height: 460px;
-}
-#banner-swiper:hover{
-  #banner-prev,#banner-next{
-    display: block;
-  }
 }
 .banner-swiper{
   width: 100%;
@@ -80,34 +76,8 @@
   #banner-pagination{
     position: absolute;
     bottom: 110px;
-   
-    span.swiper-pagination-bullet{
-      width: 14px;
-      height: 14px;
-    }
   }
-  #banner-prev,#banner-next{
-    width: 41.5px;
-    height: 79px;
-    // background: url("/static/images/v4/page.png")no-repeat;
-    position: absolute;
-    display: none;
-    top:50%;
-    margin-top: -40px;
-  }
-  #banner-next{
-    background-position-x: -41.5px;
-    right: 70px;
-  }
-  #banner-next:hover{
-    background-position-y: -83px;
-  }
-  #banner-prev:hover{
-    background-position-y:-83px;
-  }
-  #banner-prev{
-    left: 70px;
-  }
+ 
 }
  span.swiper-pagination-bullet-active{
       background: #f5f5f5;

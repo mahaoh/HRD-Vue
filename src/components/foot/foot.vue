@@ -36,19 +36,16 @@
         </div>
             <div class="srcoll">
                 <a href="https://ss.knet.cn/verifyseal.dll?sn=e18061311010574293tplg000000&pa=111332" tabindex="-1" id="urlknet" target="_blank">
-                    <img alt="&#x53EF;&#x4FE1;&#x7F51;&#x7AD9;" name="KNET_seal" border="true" src="../../assets/images/footer/kexin.png" width="26" height="26" style="margin-top: 1px"/><span>可信网站身份验证</span>
+                    <img alt="&#x53EF;&#x4FE1;&#x7F51;&#x7AD9;" name="KNET_seal" border="true" src="../../../static/images/footer/kexin.png" width="26" height="26" style="margin-top: 1px"/><span>可信网站身份验证</span>
                 </a>
-                <a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1317924703" target="_blank"><img src="../../assets/images/footer/footer-zxin.png" alt="征信"width="30" height="28"/><span>网信认证ICP征信</span></a>
-                <a class="last" href="javascript:"><img src="../../assets/images/footer/footer-beian.png" alt="备案" width="30" height="28"/><span>互联网站备案信息</span></a>
+                <a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1317924703" target="_blank"><img src="../../../static/images/footer/footer-zxin.png" alt="征信"width="30" height="28"/><span>网信认证ICP征信</span></a>
+                <a class="last" href="javascript:"><img src=".../../../static/images/footer/footer-beian.png" alt="备案" width="30" height="28"/><span>互联网站备案信息</span></a>
            </div>
        </div>
     </div>
 </footer>
 </template>
 <script>
-import footerDy from '../../assets/images/footer/footer-dy.png';
-import footerFuwu from '../../assets/images/footer/footer-fuwu.png';
-import footerAPP from '../../assets/images/footer/footer-APP.png'
 	export default{
 		name:'foot',
 		data(){
@@ -73,15 +70,15 @@ import footerAPP from '../../assets/images/footer/footer-APP.png'
 				childList:[
 					{
 						text:'下载惠APP',
-						src:footerAPP
+						src:'../../../static/images/footer/footer-APP.png'
 					},
 					{
 						text:'关注订阅号',
-						src:footerDy
+						src:'../../../static/images/footer/footer-dy.png'
 					},
 					{
 						text:'关注服务号',
-						src:footerFuwu
+						src:'../../../static/images/footer/footer-fuwu.png'
 					}
 				]
 			}
@@ -167,7 +164,7 @@ import footerAPP from '../../assets/images/footer/footer-APP.png'
         width: 110px;
         height: 30px;
         line-height: 30px;
-        background: #f56b0f url("../../assets/images/footer/footer-kefu.png")no-repeat;
+        background: #f56b0f url("../../../static/images/footer/footer-kefu.png")no-repeat;
         background-size: 12px 12px;
         border-radius: 3px;
        text-indent:3.5em;
