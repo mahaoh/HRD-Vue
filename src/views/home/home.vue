@@ -56,11 +56,19 @@
         </div>
         <div class="greenHand-bottom">
             <ul class="uls">
-                <li v-for="(NewStandard,i) in NewStandardList" :class="{'noAccomplish' : i!=0}">
+                <li v-for="(NewStandard,i) in NewStandardList" 
+                :class="{'noAccomplish' : i!=0}" 
+                @click="goDetails(NewStandard.id,
+                                  NewStandard.projectNmae,
+                                  NewStandard.reimbursement,
+                                  NewStandard.rate,
+                                  NewStandard.reimbursements,
+                                  NewStandard.total,
+                                  NewStandard.remaining)">
                     <span>{{NewStandard.projectNmae}}</span>
                     <span>{{NewStandard.reimbursement}}</span>
                     <span>{{NewStandard.rate}}</span>
-                    <span>{{NewStandard.reimbursement}}</span>
+                    <span>{{NewStandard.reimbursements}}</span>
                     <span>{{NewStandard.total}}<em>元</em></span>
                     <span>{{NewStandard.remaining}}<em>元</em></span>
                     <span><a href="javascript:;">{{NewStandard.type}}</a></span>
@@ -69,9 +77,9 @@
         </div>
     </div>
 </div>
+<p v-for="ss in a">{{ss.id}}</p>
 <loginHomeAlert v-show="loginHomeshow==true"></loginHomeAlert>
 </div>
-
 </template>
 <script>
 import slide from '../../components/swiper.vue'
@@ -111,62 +119,102 @@ import loginHomeAlert from '../../components/login/loginHomeAlert.vue'
               projectNmae:'项目名称',
               reimbursement:'还款方式',
               rate:'预期年化回报率',
-              reimbursement:'借款期限',
+              reimbursements:'借款期限',
               total:'借款总额',
               remaining:"剩余总额",
               type:'状态'
             },
             {
-              projectNmae:'新手标XY-1001-106770',
+              id:4,
+              projectNmae:'新手标XY-1001-106330',
               reimbursement:'等额本息',
               rate:'6.5%+5%',
-              reimbursement:'1个月',
-              total:'300000',
-              remaining:"80000",
+              reimbursements:'2个月',
+              total:'34000',
+              remaining:"834000",
               type:'立即加入'
             },
              {
-              projectNmae:'新手标XY-1001-106770',
+              id:5,
+              projectNmae:'新手标XY-1001-106440',
               reimbursement:'等额本息',
-              rate:'6.5%+5%',
-              reimbursement:'1个月',
-              total:'300000',
-              remaining:"80000",
+              rate:'6%+5%',
+              reimbursements:'3个月',
+              total:'190000',
+              remaining:"80540",
               type:'立即加入'
             },
               {
+              id:6,
               projectNmae:'新手标XY-1001-106770',
               reimbursement:'等额本息',
-              rate:'6.5%+5%',
-              reimbursement:'1个月',
-              total:'300000',
-              remaining:"80000",
+              rate:'6.5%',
+              reimbursements:'1个月',
+              total:'36000',
+              remaining:"80660",
               type:'立即加入'
             }
-          ]
+          ],
+          a:''
 		    }
     	}, 
     	mounted(){
+        //  axios({
+        //   method: 'get',
+        //   url: '../../json/test.json',
          
+        // });
+this.$axios.post('http://user.com/login',{
+    username: '122',
+    password:'2233'
+    })
+  .then(function(response){
+    // this.a=response.data;
+    console.log(response.data,222)
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
     	},
   		computed:{  
   		},
   		methods:{
+        goDetails:function(id,projectNmae,reimbursement,rate,reimbursements,total,remaining){
+         this.$router.push({
+          name:'detailss',
+          query:{
+            id:id,
+            projectNmae:projectNmae,
+            reimbursement:reimbursement,
+            rate:rate,
+            reimbursements:reimbursements,
+            total:total,
+            remaining:remaining
+          }
+        })
+        }
   		},
   		components:{
   			slide,
         loginHomeAlert
-  		}
+  		},
+      created(){
+       if(this.$route.name!="login"|| this.$route.name!="loginDL"){
+        this.$parent.headsShow=true;
+        this.$parent.footShow=true;
+     }
+       },
 	};
 	
 </script>
 <style lang="less" scoped>
 	.notice{
-  width: 1200px;
-  position: relative;
-  z-index: 99;
-  margin: 0 auto;
-   margin-top: -90px;
+    width: 1200px;
+    position: relative;
+    z-index: 99;
+    margin: 0 auto;
+    margin-top: -90px;
   .notice-info{
     width: 1200px;
     height: 160px;

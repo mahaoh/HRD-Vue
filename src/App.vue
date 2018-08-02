@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <heads></heads>
+    <heads v-show="headsShow"></heads>
     <router-view/>
-    <foot></foot>
+    <foot v-show="footShow"></foot>
   </div>
 </template>
 
@@ -12,10 +12,30 @@ import foot from './components/foot/foot.vue'
 
 export default {
   name: 'App',
+  data(){
+    return {
+      headsShow:true,
+      footShow:true
+    }
+  },
   components:{
       heads,
       foot
+    },
+    created(){
+      // if(this.$route.name!="loginDL" || this.$route.name!="login"){
+
+      //   this.headsShow=true;
+      //   this.footShow=true;
+      // }
+    },
+    mounted(){
+    
+      // $router.router
     }
+    // destroyed(){
+    //   console.log(this.$route.route)
+    // }
 }
 </script>
 
